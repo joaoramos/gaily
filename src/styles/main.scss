@@ -1,0 +1,113 @@
+// @import url('https://fonts.googleapis.com/css?family=Lora:400,400italic,700,700italic');
+@import 'reset';
+
+// Variables
+$colorSpankBruise:        #15213B;
+$colorSpermStainLight:    #F7F7F7;
+$colorSpermStainNormal:   #00FFC8;
+$colorSpermStainDark:     #2DEDC4;
+
+$tablet-width: 768px;
+$desktop-width: 1024px;
+
+// Mixins
+@mixin tablet {
+  @media (min-width: #{$tablet-width}) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: #{$desktop-width}) {
+    @content;
+  }
+}
+
+// Styles
+* { box-sizing: border-box }
+
+body {
+  max-width: 40em;
+  margin: 0 auto;
+}
+
+.container {
+  padding: 2em;
+}
+
+h1,
+h2,
+h3,
+strong {
+  font-weight: bold;
+}
+
+h1 { font-size: 4.5em }
+
+h2 { font-size: 2em }
+
+.poster {
+  text-align: center;
+  background: #ccc;
+
+  h1,
+  h3 {
+    color: $colorSpermStainNormal;
+  }
+}
+
+.copy {
+  background: $colorSpankBruise;
+  color: $colorSpermStainLight;
+
+  .content-block {
+    padding: 2em 0;
+  }
+}
+
+.app {
+
+  .values {
+    padding: 2em 0;
+    display: block;
+    overflow: hidden;
+  }
+
+  .value {
+    @include tablet {
+      width: 33%;
+      float: left;
+      padding-right: 1em;
+    }
+  }
+
+  .banner {
+    display: block;
+    overflow: hidden;
+  }
+
+  .mockup {
+    background: $colorSpermStainNormal;
+    height: 10em;
+
+    @include tablet {
+      width: 60%;
+      float: left;
+    }
+  }
+
+  .download {
+    @include tablet {
+      width: 40%;
+      float: right;
+    }
+  }
+}
+
+footer {
+  background: $colorSpermStainLight;
+
+  .navigation li {
+    display: inline-block;
+  }
+}
